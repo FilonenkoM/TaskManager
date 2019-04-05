@@ -1,0 +1,23 @@
+﻿<Page x:Class="FilonenkoTaskManager.Views.ThreadListPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ThreadListPage">
+
+    <Grid>
+        <DataGrid 
+            SelectionUnit="FullRow" GridLinesVisibility="None" FontSize="14" 
+            VirtualizingStackPanel.VirtualizationMode="Recycling"  SelectedIndex="0" 
+            IsSynchronizedWithCurrentItem="True" IsReadOnly="True" 
+            AutoGenerateColumns="False" ItemsSource="{Binding Threads, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id" Binding="{Binding Id, Mode=OneWay}"></DataGridTextColumn>
+                <DataGridTextColumn Header="State" Binding="{Binding ThreadState, Mode=OneWay}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Start time" Binding="{Binding StartTime, Mode=OneWay}"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>
